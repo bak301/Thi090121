@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameover.enabled = false;
+        gameover.gameObject.SetActive(false);
         state = "play";
         score = 0;
         counter = interval;
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         if (state == "lose")
         {
             Time.timeScale = 0;
-            gameover.enabled = true;
+            gameover.gameObject.SetActive(true);
         }
 
         scores.text = "Score: " + score;
